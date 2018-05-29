@@ -1,5 +1,12 @@
+@import "assets/styles/_common.scss";
+
 .App {
   text-align: center;
+}
+
+.App-container {
+  @include make-container();
+  @include make-container-max-widths();
 }
 
 .App-logo {
