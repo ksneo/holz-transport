@@ -8,9 +8,9 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "set NODE_PATH=./src&&react-scripts start",
+    "build": "set NODE_PATH=./src&&react-scripts build",
+    "test": "set NODE_PATH=./src&&react-scripts test --env=jsdom",
+    "eject": "set NODE_PATH=./src&&react-scripts eject"
   }
 }
