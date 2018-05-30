@@ -2,34 +2,52 @@
 
 .App {
   text-align: center;
-}
-
-.App-container {
   @include make-container();
   @include make-container-max-widths();
 }
 
+.App-container {
+  @include make-row();
+}
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 60px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px;
+  color: #222;
 }
 
 .App-title {
   font-size: 1.5em;
+  padding-top: 15px;
+  text-transform: uppercase;
 }
 
 .App-intro {
   font-size: medium;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.App-header {
+  @include make-col-ready();
+  @include make-col(12);
+  order: 0;
+  border-bottom: 1px solid theme-color("primary");
+  margin-bottom: 15px;
+}
+
+.App-sidebar {
+  order: 1;
+  @include make-col-ready();
+  @include make-col(2);
+}
+
+.App-main {
+  order: 2;
+  @include make-col-ready();
+  @include make-col(10);
 }

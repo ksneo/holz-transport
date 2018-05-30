@@ -1,0 +1,28 @@
+.OrderInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left; }
+
+.OrderInfo-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0;
+  color: #fff;
+  background-color: #89afdc;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px; }
+
+.OrderInfo-short {
+  display: flex;
+  justify-content: space-between; }
+
+.OrderInfo-show {
+  margin-right: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  min-width: 91px;
+  border: 0; }
+  .OrderInfo-show:hover {
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5); }

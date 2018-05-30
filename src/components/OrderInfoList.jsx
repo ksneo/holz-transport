@@ -4,7 +4,8 @@ import OrderInfo from 'components/OrderInfo';
 
 const OrderInfoList = (props) => {
     return props.orders.map((order) => {
-        return (<OrderInfo key={order.id} order={order} />);
+        const {orderState, ...orderData} = order;
+        return (<OrderInfo key={order.id} order={orderData} orderState={orderState} />);
     });
 }
 
