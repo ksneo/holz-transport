@@ -6,4 +6,4 @@ export const types = {
     TOGGLE_FULL_ORDER,
 }
 
-export const showFullOrder = makeActionCreator(TOGGLE_FULL_ORDER, 'id');
+export const toggleFullOrder = makeActionCreator(TOGGLE_FULL_ORDER, 'id');

@@ -5,7 +5,10 @@ export function ordersData(state=[], action) {
         case types.TOGGLE_FULL_ORDER:
             return state.map(order => {
                 if (order.id === action.id) {
-                    order.show = !order.show;
+                    order.orderState.show = !order.orderState.show;
+                }
+                else {
+                    order.orderState.show = false;
                 }
                 return order;
             });

@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { toggleFullOrder } from 'store/ordersData/actions';
 import 'components/OrderInfo.css';
 
 const OrderInfo = (props) => {
-    const {order, orderState} = props;
-
+    const {order, orderState, handleShow} = props;
     return (
         <div className='OrderInfo'>
             <h3 className='OrderInfo-title'>
                 <span>Доставка № {order.id}</span>
-                <button className='OrderInfo-show' onClick={orderState.handleShow}>
+                <button className='OrderInfo-show' onClick={() => handleShow(order.id)}>
                     <span>{orderState.show ? 'Скрыть' : 'Показать'}</span>
                 </button>
             </h3>
@@ -41,8 +42,13 @@ OrderInfo.defaultProps = {
     order: {},
     orderState: {
         open: false,
-        handleShow() {return null},
     }
 }
 
-export default OrderInfo;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        handleShow: (id) => dispatch(toggleFullOrder(id)),
+    }
+}
+
+export default connect(null, mapDispatchToProps)(OrderInfo);
