@@ -1,32 +1,10 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import logo from 'assets/images/logo.png';
-import {orders} from 'data/test-orders';
 import 'containers/App.css';
-import 'components/OrderInfo';
-import OrderInfoList from '../components/OrderInfoList';
+import OrderInfoList from 'components/OrderInfoList';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.state = getInitialState(orders(), this.handleClick);
-    }
-
-    handleClick(id) {
-        return () => {
-            const newOrdersData = this.state.ordersData.map(order => {
-                if (order.id === id) {
-                    order.orderState.show = !order.orderState.show;
-                }
-                else {
-                    order.orderState.show = false;
-                }
-                return order;
-            });
-            this.setState({ordersData: newOrdersData});
-        }
-    }
-
     render() {
         return (
             <div className="App">
@@ -36,7 +14,7 @@ class App extends Component {
                         <h1 className="App-title">Транспорт</h1>
                     </header>
                     <main className='App-main'>
-                        <OrderInfoList orders={this.state.ordersData} />
+                        <OrderInfoList orders={this.props.ordersData} />
                     </main>
                     <aside className='App-sidebar'>
                         <ul>
@@ -52,14 +30,11 @@ class App extends Component {
     }
 }
 
-const getInitialState = (orders, handleShow) => {
-    const ordersData = orders.map((order) => {
-        const orderState = {
-            show: false,
-            handleShow: handleShow(order.id),
-        }
-        return {...order, orderState}
-    });
-    return {ordersData};
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        ordersData: state.ordersData,
+    }
 }
-export default App;
+
+export default connect(mapStateToProps)(App);
