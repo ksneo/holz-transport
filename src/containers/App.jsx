@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 import logo from 'assets/images/logo.png';
 import 'containers/App.css';
 import OrderInfoList from 'components/OrderInfoList';
+import { fetchOrders } from 'store/ordersData/actions';
 
 class App extends Component {
+    componentDidMount() {
+        this.props.fetchOrders();
+    }
+
     render() {
         return (
             <div className="App">
@@ -33,7 +38,12 @@ class App extends Component {
 const mapStateToProps = (state) => {
     return {
         ordersData: state.ordersData,
+        loading: state.loading,
     }
 }
-
-export default connect(mapStateToProps)(App);
+const mapActionsToProps = (dispatch) => {
+    return {
+        fetchOrders: () => dispatch(fetchOrders()),
+    }
+}
+export default connect(mapStateToProps, mapActionsToProps)(App);

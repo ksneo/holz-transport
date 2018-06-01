@@ -4,8 +4,6 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
-import {orders} from 'data/test-orders';
-
 export function configureStore(initialState) {
     return createStore(rootReducer, initialState, applyMiddleware(thunk))
 }
@@ -17,10 +15,10 @@ const getInitialState = (orders) => {
         }
         return {...order, orderState}
     });
-    return {ordersData};
+    return {ordersData, loading: false};
 }
 
-const defaultStore = configureStore(getInitialState(orders()));
+const defaultStore = configureStore(getInitialState([]));
 
 export default function AppWithStore(app, store = defaultStore) {
     return (

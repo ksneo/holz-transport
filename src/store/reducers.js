@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import { ordersData } from './ordersData/reducers';
+import { ordersData, loading } from './ordersData/reducers';
 
 export default combineReducers({
-    ordersData
+    ordersData,
+    loading,
 });
