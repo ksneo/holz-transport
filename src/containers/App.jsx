@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import logo from 'assets/images/logo.png';
 import 'containers/App.css';
-import OrderInfoList from 'components/OrderInfoList';
+import OrderInfoPage from 'containers/OrderInfoPage';
 import { fetchOrders } from 'store/ordersData/actions';
 import { HashRouter, Route, Link } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ class App extends Component {
                         </header>
                         <main className='App-main'>
                             <Route path='/settings' render={() => <p>Здесь будут настройки</p>} />
-                            <Route exact path='/' render={() => <OrderInfoList orders={this.props.ordersData} />} />
+                            <Route exact path='/' render={() => <OrderInfoPage ordersData={this.props.ordersData} />} />
                         </main>
                         <aside className='App-sidebar'>
                             <ul>
