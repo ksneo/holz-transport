@@ -3,7 +3,7 @@
   flex-direction: column;
   text-align: left; }
 
-.OrderInfo-title {
+.OrderInfo-Title {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -14,15 +14,15 @@
   padding-bottom: 5px;
   padding-left: 15px; }
 
-.OrderInfo-short {
+.OrderInfo-Short {
   display: flex;
   justify-content: space-between; }
 
-.OrderInfo-show {
+.OrderInfo-ShowBtn {
   margin-right: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
   min-width: 91px;
   border: 0; }
-  .OrderInfo-show:hover {
+  .OrderInfo-ShowBtn:hover {
     box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5); }

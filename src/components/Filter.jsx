@@ -6,7 +6,7 @@ const Filter = (props) => {
         <div className='Filter'>
             <div className='FilterDate'>
                 <label>Выберите дату:
-                    <select className='FilterDate-select' >
+                    <select className='FilterDate-Select' >
                         <option value='Сегодня'>Сегодня</option>
                         <option value='Вчера'>Вчера</option>
                         <option value='Текущая неделя'>Текущая неделя</option>
